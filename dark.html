@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John Williams — Magician | Tampa Bay</title>
+<meta name="description" content="John Williams performs close-up magic for corporate events, weddings, and private parties in Tampa Bay. 60 minutes, $350.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1220; --navy-2:#111A2C; --navy-3:#16223A;
+  --gold:#C9A961; --gold-dk:#A98A46;
+  --white:#F5F3EF; --grey:rgba(245,243,239,.62);
+  --rule:rgba(245,243,239,.12);
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Archivo",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+h1,h2,h3,.logo-txt,.chip,.svc .no,.tier .amt,.rev q,.score b{font-variation-settings:"SOFT" 40,"WONK" 1;}
+.rev q{font-variation-settings:"SOFT" 60,"WONK" 1;}
+body{background:var(--navy);color:var(--white);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid var(--rule)}
+.nav-in{max-width:1180px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.hat{width:44px;height:30px;position:relative;flex:none}
+.hat::before{content:"";position:absolute;left:9px;top:0;width:26px;height:20px;background:var(--gold);border-radius:3px 3px 0 0}
+.hat::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:6px;background:var(--gold);border-radius:3px}
+.logo-txt{font-family:var(--serif);line-height:1.05}
+.logo-txt b{display:block;font-size:20px;font-weight:700;color:var(--gold)}
+.logo-txt small{display:block;font-size:11px;color:var(--grey)}
+.menu{display:flex;align-items:center;gap:30px}
+.menu a{font-size:14px;opacity:.85}
+.menu a:hover{opacity:1;color:var(--gold)}
+.quote{background:var(--gold);color:#0B1220!important;font-weight:600;font-size:14px;padding:12px 22px;border-radius:4px;opacity:1!important}
+.quote:hover{background:var(--gold-dk)}
+.burger{display:none;background:none;border:0;color:var(--gold);font-size:24px;cursor:pointer}
+@media(max-width:880px){
+  .menu{position:fixed;inset:63px 0 auto 0;background:var(--navy-2);flex-direction:column;align-items:stretch;gap:0;padding:12px 0;border-bottom:1px solid var(--rule);display:none}
+  .menu.open{display:flex}
+  .menu a{padding:16px 28px;border-bottom:1px solid var(--rule)}
+  .quote{margin:14px 28px;text-align:center;border-bottom:0}
+  .burger{display:block}
+}
+
+.hero{padding:70px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+.portrait{border-radius:6px;overflow:hidden;border:1px solid var(--rule);background:var(--navy-2)}
+.portrait img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,6.5vw,74px);line-height:1.02;color:var(--gold)}
+.hero p{margin-top:24px;font-size:15px;line-height:1.75;color:var(--grey);max-width:52ch}
+.hero p + p{margin-top:16px}
+.hero .quote{display:inline-block;margin-top:30px;padding:15px 30px;font-size:15px}
+
+.logos{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--navy-2);padding:34px 0}
+.logos .wrap{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.logos small{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);width:100%;text-align:center;margin-bottom:16px}
+.chip{border:1px solid var(--rule);border-radius:4px;padding:11px 20px;font-family:var(--serif);font-size:15px;color:var(--grey)}
+
+section{padding:86px 0}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.6vw,50px);line-height:1.08;margin-top:12px}
+.lede{margin-top:16px;color:var(--grey);font-size:15px;line-height:1.75;max-width:58ch}
+
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+@media(max-width:900px){.svc{grid-template-columns:1fr}}
+.svc article{border:1px solid var(--rule);border-radius:6px;background:var(--navy-2);padding:32px 28px}
+.svc .no{font-family:var(--serif);font-size:14px;color:var(--gold);letter-spacing:.2em}
+.svc h3{font-family:var(--serif);font-size:26px;font-weight:600;margin:12px 0 12px}
+.svc p{font-size:14px;line-height:1.7;color:var(--grey)}
+
+#precios{background:var(--navy-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+@media(max-width:900px){.tiers{grid-template-columns:1fr}}
+.tier{border:1px solid var(--rule);border-radius:6px;padding:30px;background:var(--navy);display:flex;flex-direction:column}
+.tier.feature{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,169,97,.08),var(--navy) 60%)}
+.tier h3{font-family:var(--serif);font-size:25px;font-weight:600}
+.tier .amt{font-family:var(--serif);font-size:44px;color:var(--gold);margin:14px 0 4px;line-height:1}
+.tier .per{font-size:12px;color:var(--grey)}
+.tier ul{list-style:none;margin:22px 0 26px}
+.tier li{font-size:14px;color:var(--grey);padding:9px 0;border-bottom:1px solid var(--rule)}
+.tier .quote{margin-top:auto;text-align:center;display:block}
+.tier.ghost .quote{background:transparent;border:1px solid var(--gold);color:var(--gold)!important}
+.tier.ghost .quote:hover{background:rgba(201,169,97,.12)}
+
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+@media(max-width:900px){.rev{grid-template-columns:1fr}}
+.rev blockquote{border:1px solid var(--rule);border-radius:6px;padding:26px;background:var(--navy-2)}
+.stars{color:var(--gold);letter-spacing:.14em;font-size:13px}
+.rev q{display:block;quotes:none;font-family:var(--serif);font-size:18px;line-height:1.5;margin:14px 0}
+.rev cite{font-style:normal;font-size:12px;color:var(--grey)}
+.score{display:flex;align-items:baseline;gap:12px;margin-top:14px;flex-wrap:wrap}
+.score b{font-family:var(--serif);font-size:46px;color:var(--gold);line-height:1}
+
+#contacto{background:var(--navy-2);border-top:1px solid var(--rule)}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px;max-width:720px}
+@media(max-width:700px){.form{grid-template-columns:1fr}}
+.full{grid-column:1/-1}
+.form label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin-bottom:7px}
+.form input,.form select,.form textarea{width:100%;background:var(--navy);border:1px solid var(--rule);border-radius:4px;color:var(--white);font-family:var(--sans);font-size:15px;padding:13px 14px}
+.form select option{background:var(--navy)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:0;border-color:var(--gold)}
+.form textarea{min-height:110px;resize:vertical}
+.form button{grid-column:1/-1;background:var(--gold);color:#0B1220;border:0;border-radius:4px;font-family:var(--sans);font-weight:600;font-size:15px;padding:16px;cursor:pointer}
+.form button:hover{background:var(--gold-dk)}
+
+footer{padding:40px 0;border-top:1px solid var(--rule);text-align:center}
+footer p{font-size:12px;color:var(--grey)}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;background:var(--gold);color:#0B1220;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.wa:hover{background:var(--gold-dk)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="#" class="logo">
+      <span class="hat" aria-hidden="true"></span>
+      <span class="logo-txt"><b>John Williams</b><small>Magician · Tampa Bay</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+    <div class="menu" id="menu">
+      <a href="#servicios">Services</a>
+      <a href="#precios">Pricing</a>
+      <a href="#opiniones">Reviews</a>
+      <a href="#contacto" class="quote">Get a quote</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div class="portrait"><img src="assets/john-williams-magician.jpg" alt="John Williams, magician, Tampa Bay"></div>
+    <div>
+      <h1>Magician in Tampa Bay</h1>
+      <p>John Williams performs close-up magic for corporate events, private parties, weddings, product launches, and anything else that needs a room to loosen up. Forty-five years practicing. Thirteen years professional.</p>
+      <p>Every show is built around your guests, not a fixed script. He works the room, not a stage.</p>
+      <a href="#contacto" class="quote">Get a quote</a>
+    </div>
+  </div>
+</div>
+
+<div class="logos">
+  <div class="wrap">
+    <small>Booked for</small>
+    <span class="chip">Corporate events</span>
+    <span class="chip">Weddings</span>
+    <span class="chip">Private parties</span>
+    <span class="chip">Product launches</span>
+    <span class="chip">Retirements</span>
+    <span class="chip">Holiday parties</span>
+  </div>
+</div>
+
+<section id="servicios">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h2>Pick the room. He'll handle the rest.</h2>
+    <p class="lede">Three formats, all 60 minutes unless you want longer.</p>
+    <div class="svc">
+      <article>
+        <div class="no">01</div>
+        <h3>Strolling magic</h3>
+        <p>John moves between groups during cocktail hour or dinner. Best for events where guests arrive at different times and don't know each other yet.</p>
+      </article>
+      <article>
+        <div class="no">02</div>
+        <h3>Close-up sets</h3>
+        <p>Small groups, seated, three to four feet away. The card gets signed. The ring disappears. It happens in their hands.</p>
+      </article>
+      <article>
+        <div class="no">03</div>
+        <h3>Corporate bookings</h3>
+        <p>Trade show booths, client dinners, team events. John can work your product or message into the routine if you want him to.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="precios">
+  <div class="wrap">
+    <span class="eyebrow">Pricing</span>
+    <h2>Published prices. No haggling.</h2>
+    <p class="lede">What you see is what you pay. Travel inside Pinellas and Hillsborough is included.</p>
+    <div class="tiers">
+      <article class="tier ghost">
+        <h3>Gift certificate</h3>
+        <div class="amt">$350</div>
+        <span class="per">60 minutes · good for 2 years</span>
+        <ul>
+          <li>Transferable to anyone</li>
+          <li>Sent same day</li>
+          <li>Redeem any date he's open</li>
+        </ul>
+        <a href="#contacto" class="quote">Buy certificate</a>
+      </article>
+      <article class="tier feature">
+        <h3>Standard booking</h3>
+        <div class="amt">$350</div>
+        <span class="per">60 minutes · most events</span>
+        <ul>
+          <li>Strolling or close-up</li>
+          <li>Tailored to your guests</li>
+          <li>Travel included locally</li>
+          <li>Date held on deposit</li>
+        </ul>
+        <a href="#contacto" class="quote">Check your date</a>
+      </article>
+      <article class="tier ghost">
+        <h3>Extended</h3>
+        <div class="amt">Quote</div>
+        <span class="per">2+ hours or multi-room</span>
+        <ul>
+          <li>Larger corporate events</li>
+          <li>Multiple performers available</li>
+          <li>Custom routine on request</li>
+        </ul>
+        <a href="#contacto" class="quote">Ask for a quote</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="opiniones">
+  <div class="wrap">
+    <span class="eyebrow">Reviews</span>
+    <h2>Sixty-five people have written in.</h2>
+    <div class="score"><b>4.8</b><span class="stars">★★★★★</span><span style="color:var(--grey);font-size:14px">65 Google reviews</span></div>
+    <div class="rev">
+      <blockquote>
+        <div class="stars">★★★★★</div>
+        <q>We had John over for a large Father's Day event and his performance was phenomenal.</q>
+        <cite>Thang Truong · Google · 6/19/26</cite>
+      </blockquote>
+      <blockquote>
+        <div class="stars">★★★★★</div>
+        <q>[ Real Google review goes here. ]</q>
+        <cite>Placeholder — swap before launch</cite>
+      </blockquote>
+      <blockquote>
+        <div class="stars">★★★★★</div>
+        <q>[ Real Google review goes here. ]</q>
+        <cite>Placeholder — swap before launch</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2>Tell him about your event.</h2>
+    <p class="lede">He answers his own email. Usually same day.</p>
+    <form class="form" onsubmit="event.preventDefault();alert('Demo only — this would land in John\u2019s inbox.')">
+      <div><label for="a1">Name</label><input id="a1" type="text" required></div>
+      <div><label for="a2">Email</label><input id="a2" type="email" required></div>
+      <div><label for="a3">Phone</label><input id="a3" type="tel"></div>
+      <div><label for="a4">Event date</label><input id="a4" type="date"></div>
+      <div class="full"><label for="a5">Type of event</label>
+        <select id="a5"><option>Corporate</option><option>Wedding</option><option>Private party</option><option>Product launch</option><option>Other</option></select>
+      </div>
+      <div class="full"><label for="a6">Details</label><textarea id="a6" placeholder="How many guests, where, what's the occasion"></textarea></div>
+      <button type="submit">Send request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>John Williams · The 439 Magic Experience · Tampa Bay, FL</p>
+    <p style="margin-top:8px;opacity:.55">Concept demo — not a live site.</p>
+  </div>
+</footer>
+
+<a class="wa" href="#contacto" aria-label="Message John">✆</a>
+
+<script>
+var b=document.getElementById('burger'),m=document.getElementById('menu');
+b.addEventListener('click',function(){m.classList.toggle('open')});
+m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open')})});
+</script>
+</body>
+</html>
