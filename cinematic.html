@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John Williams — Magician | Version 2: Cinematic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#050505; --coal:#0C0C0C; --smoke:#141414;
+  --paper:#EDEBE6; --dim:rgba(237,235,230,.5); --dim2:rgba(237,235,230,.28);
+  --rule:rgba(237,235,230,.1);
+  --display:"Bodoni Moda",Didot,Georgia,serif;
+  --sans:"Jost",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--paper);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:26px 32px;display:flex;justify-content:space-between;align-items:center;mix-blend-mode:difference}
+.mk{font-family:var(--display);font-size:15px;letter-spacing:.3em;text-transform:uppercase}
+.mn{display:flex;gap:34px}
+.mn a{font-size:11px;letter-spacing:.24em;text-transform:uppercase;opacity:.7}
+.mn a:hover{opacity:1}
+.burger{display:none;background:none;border:0;color:var(--paper);font-size:20px;cursor:pointer}
+@media(max-width:820px){
+  .mn{position:fixed;inset:0;background:var(--black);flex-direction:column;justify-content:center;align-items:center;gap:36px;transform:translateY(-101%);transition:transform .5s cubic-bezier(.16,1,.3,1);mix-blend-mode:normal}
+  .mn.open{transform:none}
+  .mn a{font-family:var(--display);font-size:24px;letter-spacing:.08em;text-transform:none;opacity:1}
+  .burger{display:block;z-index:70}
+}
+
+/* HERO — three-panel silhouette */
+header{height:100svh;min-height:620px;position:relative;overflow:hidden;background:var(--black)}
+.panels{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr)}
+.panel{
+  position:relative;
+  background:radial-gradient(70% 80% at 50% 45%,var(--smoke) 0%,var(--black) 72%);
+  border-right:1px solid rgba(237,235,230,.05);
+  display:flex;align-items:center;justify-content:center;
+}
+.panel:last-child{border-right:0}
+.panel span{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim2);transform:translateY(120px)}
+.figure{
+  width:52%;height:62%;align-self:center;
+  background:linear-gradient(180deg,rgba(237,235,230,.09),rgba(237,235,230,.02) 70%,transparent);
+  border-radius:44% 44% 8% 8%/22% 22% 3% 3%;
+  filter:blur(1px);
+}
+.vig{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 50%,transparent 30%,rgba(5,5,5,.85) 100%);pointer-events:none}
+.hero-txt{
+  position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;
+  padding:0 32px;max-width:1240px;margin:0 auto;left:0;right:0;
+}
+h1{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(38px,6.6vw,86px);line-height:1.06;letter-spacing:-.005em;max-width:16ch;
+}
+h1 i{font-style:italic;color:var(--dim)}
+.hero-sub{margin-top:26px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.hero-cta{margin-top:38px;display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:10px;width:max-content;transition:border-color .3s,gap .3s}
+.hero-cta:hover{border-color:var(--paper);gap:22px}
+
+/* peer quote */
+.peer{padding:110px 0;border-bottom:1px solid var(--rule)}
+.peer .wrap{max-width:760px}
+.peer q{display:block;quotes:none;font-family:var(--display);font-style:italic;font-size:clamp(20px,2.6vw,30px);line-height:1.5;color:var(--paper)}
+.peer cite{display:block;margin-top:24px;font-style:normal;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim)}
+
+/* clients strip */
+.clients{padding:44px 0;border-bottom:1px solid var(--rule);background:var(--coal)}
+.clients .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:44px}
+.clients small{width:100%;text-align:center;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim2);margin-bottom:8px}
+.clients span{font-family:var(--display);font-size:15px;letter-spacing:.06em;color:var(--dim);transition:color .3s}
+.clients span:hover{color:var(--paper)}
+
+/* editorial rows */
+.row{padding:118px 0;border-bottom:1px solid var(--rule)}
+.row .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.row:nth-child(even) .plate{order:2}
+@media(max-width:900px){.row .wrap{grid-template-columns:1fr;gap:40px}.row:nth-child(even) .plate{order:0}}
+.plate{aspect-ratio:4/5;background:radial-gradient(60% 70% at 50% 40%,var(--smoke),var(--black));border:1px solid var(--rule);display:flex;align-items:center;justify-content:center}
+.plate span{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim2)}
+.num{font-family:var(--display);font-size:12px;letter-spacing:.3em;color:var(--dim2)}
+.row h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,46px);line-height:1.12;margin:18px 0 22px}
+.row p{font-size:15px;line-height:1.85;color:var(--dim);max-width:44ch}
+
+/* proof */
+.proof{padding:118px 0;border-bottom:1px solid var(--rule);text-align:center}
+.big{font-family:var(--display);font-size:clamp(70px,14vw,150px);line-height:.9;font-weight:400}
+.proof small{display:block;margin-top:20px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim)}
+.q3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:64px;text-align:left}
+@media(max-width:820px){.q3{grid-template-columns:1fr}}
+.q3 blockquote{background:var(--black);padding:38px 30px}
+.q3 q{display:block;quotes:none;font-family:var(--display);font-style:italic;font-size:17px;line-height:1.55}
+.q3 cite{display:block;margin-top:20px;font-style:normal;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim2)}
+
+/* book */
+.book{padding:130px 0;text-align:center}
+.book h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,5.6vw,66px);line-height:1.05}
+.book p{margin:24px auto 0;max-width:46ch;font-size:15px;line-height:1.8;color:var(--dim)}
+.bform{max-width:560px;margin:52px auto 0;text-align:left}
+.bf{margin-bottom:26px}
+.bf label{display:block;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim2);margin-bottom:10px}
+.bf input,.bf textarea,.bf select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--rule);color:var(--paper);font-family:var(--sans);font-weight:300;font-size:16px;padding:10px 0;transition:border-color .3s}
+.bf select option{background:var(--black)}
+.bf input:focus,.bf textarea:focus,.bf select:focus{outline:0;border-bottom-color:var(--paper)}
+.bf textarea{min-height:74px;resize:vertical}
+.bform button{width:100%;margin-top:14px;background:var(--paper);color:var(--black);border:0;padding:19px;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;transition:opacity .3s}
+.bform button:hover{opacity:.82}
+.tiny{margin-top:22px;font-size:11px;letter-spacing:.14em;color:var(--dim2);text-align:center}
+
+footer{padding:46px 0;border-top:1px solid var(--rule);text-align:center}
+footer p{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim2)}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+:focus-visible{outline:1px solid var(--paper);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="mk">J. Williams</a>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="mn" id="mn">
+    <a href="#work">The Work</a>
+    <a href="#proof">Proof</a>
+    <a href="#book">Book</a>
+  </div>
+</nav>
+
+<header>
+  <div class="panels">
+    <div class="panel"><div class="figure"></div><span>Photo 01</span></div>
+    <div class="panel"><div class="figure"></div><span>Photo 02</span></div>
+    <div class="panel"><div class="figure"></div><span>Photo 03</span></div>
+  </div>
+  <div class="vig"></div>
+  <div class="hero-txt">
+    <div class="wrap" style="padding:0">
+      <h1>Some guests watch. <i>The rest never see it coming.</i></h1>
+      <p class="hero-sub">John Williams · Close-up magic · Tampa Bay</p>
+      <a href="#book" class="hero-cta">Check your date <span>→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="peer">
+  <div class="wrap rv">
+    <q>[ Endorsement slot. A venue manager, an event planner, or another performer — someone whose name means something to the people booking him. John has to actually get this quote. Do not invent one. ]</q>
+    <cite>Placeholder — real attribution required</cite>
+  </div>
+</div>
+
+<div class="clients">
+  <div class="wrap rv">
+    <small>Where he's worked</small>
+    <span>[ Client 01 ]</span><span>[ Client 02 ]</span><span>[ Client 03 ]</span>
+    <span>[ Client 04 ]</span><span>[ Client 05 ]</span><span>[ Client 06 ]</span>
+  </div>
+</div>
+
+<div id="work">
+  <div class="row">
+    <div class="wrap">
+      <div class="plate rv"><span>Photo — hands, cards, close</span></div>
+      <div class="rv">
+        <div class="num">I</div>
+        <h2>He works three feet away.</h2>
+        <p>No stage, no lighting rig, no sound check. John moves through the room and performs at arm's length, which means there is nowhere to hide the method. Forty-five years of practice is the only reason that's possible.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="wrap">
+      <div class="plate rv"><span>Photo — a guest reacting</span></div>
+      <div class="rv">
+        <div class="num">II</div>
+        <h2>The trick isn't the point.</h2>
+        <p>The point is the thirty seconds afterward, when six strangers who were checking their phones are now talking to each other. That's what you're actually buying at a corporate event. The magic is the excuse.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="wrap">
+      <div class="plate rv"><span>Photo — the room, wide</span></div>
+      <div class="rv">
+        <div class="num">III</div>
+        <h2>Built for your room.</h2>
+        <p>Corporate, private, wedding, launch. John builds the set around who's in the room and how long he's got. Sixty minutes is standard. Longer if the night calls for it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="proof" id="proof">
+  <div class="wrap">
+    <div class="big rv">4.8</div>
+    <small class="rv">Across 65 Google reviews</small>
+    <div class="q3">
+      <blockquote class="rv">
+        <q>We had John over for a large Father's Day event and his performance was phenomenal.</q>
+        <cite>Thang Truong · Google · 6/19/26</cite>
+      </blockquote>
+      <blockquote class="rv">
+        <q>[ Real Google review goes here. ]</q>
+        <cite>Placeholder — swap before launch</cite>
+      </blockquote>
+      <blockquote class="rv">
+        <q>[ Real Google review goes here. ]</q>
+        <cite>Placeholder — swap before launch</cite>
+      </blockquote>
+    </div>
+  </div>
+</div>
+
+<div class="book" id="book">
+  <div class="wrap">
+    <h2 class="rv">Sixty minutes. $350.</h2>
+    <p class="rv">That's the standard booking, and the gift certificate is the same price and good for two years. Anything bigger, ask.</p>
+    <form class="bform rv" onsubmit="event.preventDefault();alert('Demo only — this would land in John\u2019s inbox.')">
+      <div class="bf"><label for="b1">Name</label><input id="b1" type="text" required></div>
+      <div class="bf"><label for="b2">Email</label><input id="b2" type="email" required></div>
+      <div class="bf"><label for="b3">Event date</label><input id="b3" type="date"></div>
+      <div class="bf"><label for="b4">Type</label><select id="b4"><option>Corporate</option><option>Wedding</option><option>Private party</option><option>Gift certificate</option><option>Not sure yet</option></select></div>
+      <div class="bf"><label for="b5">Details</label><textarea id="b5" placeholder="Guests, venue, occasion"></textarea></div>
+      <button type="submit">Send</button>
+      <p class="tiny">He answers his own email.</p>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap"><p>John Williams · Tampa Bay · Concept demo, Version 2 (Cinematic)</p></div>
+</footer>
+
+<script>
+var b=document.getElementById('burger'),m=document.getElementById('mn');
+b.addEventListener('click',function(){var o=m.classList.toggle('open');b.textContent=o?'✕':'☰'});
+m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.textContent='☰'})});
+var io=new IntersectionObserver(function(es){es.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in')},i*110);io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
